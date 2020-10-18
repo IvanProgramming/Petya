@@ -1,0 +1,2 @@
+DISCORD_TOKEN = ""  # Insert discord token here
+IS_BOT = True       # Set false, if bot is based on user account
