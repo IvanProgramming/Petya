@@ -3,7 +3,6 @@ import time
 
 import utils
 
-@utils.admin_permissions_required()
 async def ping(message):
         """ Simple Ping function with execution time benchmark """
         command_execution_start = time.time() 
