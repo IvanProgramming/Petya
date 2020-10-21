@@ -65,6 +65,7 @@ def bot_transmit_message_arguments(fn):
 
 
 def from_any2user_id(source):
+    """ Converts mention or just id to user_id integer """
     if re.match("<@!\d{18}>", source):
         return source[3:-1]
     else:
@@ -74,6 +75,7 @@ def from_any2user_id(source):
             return 0
 
 def fetch_emojis(message_content):
+    """ Function, that fetches all emojis into emoji project  """
     emojis = re.findall("<.:[a-zA-Z0-9_]{2,}:\d{18}>", message_content)
     emojis_objects = []
     for emoji in emojis:
