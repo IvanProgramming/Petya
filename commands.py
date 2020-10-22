@@ -24,6 +24,7 @@ async def ping(message):
     edited_embed.add_field(name="Время исполнения", value=f"{command_execution_time} сек")
     await sended_message.edit(embed=edited_embed)
 
+
 @utils.sender_admin_permissions_required()
 @utils.bot_ban_permissions_required()
 @utils.bot_transmit_message_arguments
@@ -34,3 +35,9 @@ async def ban(message, user_id, reason="", *args):
     guilty_member = await used_guild.fetch_member(user_id)
     await guilty_member.ban(reason=reason)
     await utils.send_ok_embed(message.channel, f"Пользователь {guilty_member.name}#{guilty_member.discriminator} успешно забанен")
+
+async def rand_joke(message):
+    """ Sends random joke to user. Fetched from anekdots.ru website """
+    joke = anekdots.Joke.get_random_joke()
+    joke_embed = discord.Embed(title="Шутка", description=joke, color=discord.Color.gold())
+    await message.channel.send(embed=joke_embed)

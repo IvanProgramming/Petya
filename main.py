@@ -29,6 +29,6 @@ async def on_message(message):
             await commands.ban(message)
         elif message.content.startswith("to_console"):
             await commands.to_console(message)
-        elif message.content.startswith("emojis_debug"):
-            await commands.emojis_debug(message)
+        elif message.content.startswith("joke"):
+            await commands.rand_joke(message)
 client.run(settings.DISCORD_TOKEN, bot=settings.IS_BOT)
