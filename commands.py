@@ -40,4 +40,5 @@ async def rand_joke(message):
     """ Sends random joke to user. Fetched from anekdots.ru website """
     joke = anekdots.Joke.get_random_joke()
     joke_embed = discord.Embed(title="Шутка", description=joke, color=discord.Color.gold())
+    joke_embed.set_footer(text="Случайная шутка с сайта anekdot.ru", icon_url="https://lh4.ggpht.com/1kybKpDOkn1_mVnm5DCTtDTmO3W31gHDybaaH47bqrhEXzqy6Ma00AggakUa7GgmBIE=w128")
     await message.channel.send(embed=joke_embed)
