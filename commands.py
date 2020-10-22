@@ -1,3 +1,4 @@
+import anekdots
 import discord
 import time
 
